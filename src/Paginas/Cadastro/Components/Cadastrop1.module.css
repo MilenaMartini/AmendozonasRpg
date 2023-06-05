@@ -103,8 +103,8 @@ body {
   }
 
   .img {
-    height: 4rem;
-    border-bottom: 5px solid transparent;
+    height: 4.5rem;
+    border-bottom: 4px solid transparent;
   }
 }
 
@@ -116,13 +116,14 @@ body {
   }
 
   .img {
-  height: 5rem;
-  border-bottom: 90px solid transparent;
+  height: 3rem;
+  border-bottom: 1px solid transparent;
 }
 
   .DivConteudo {
     width: 25rem;
     height: 25rem;
+    gap: 0;
   }
 
   .InputsLinha {
@@ -132,9 +133,17 @@ body {
 
   .InputsLinha > * {
     width: 100%;
+    border: 0;
   }
 
   .InputPequeno {
     width: 100%;
+  }
+
+  .BotoesLinha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: none;
   }
 }

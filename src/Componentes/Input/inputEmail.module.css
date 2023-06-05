@@ -19,6 +19,8 @@
     .Input {
       height: 3.5rem; /* Ajuste o valor conforme desejado */
       font-size: 16px;
+      border: none;
+      margin: 0;
     }
   
     .Input::placeholder {
