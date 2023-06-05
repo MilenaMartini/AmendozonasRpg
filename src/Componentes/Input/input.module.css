@@ -1,0 +1,28 @@
+.Input {
+  height: 4.5rem;
+  width: 26rem;
+  border-radius: 10px;
+  color: white;
+  background-color: #AA884F;
+  border: 2px solid #9D7A44;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.Input::placeholder {
+  color: white;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .Input {
+    height: 3.5rem; /* Ajuste o valor conforme desejado */
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .Input::placeholder {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.BotoesLinha {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.Div {
+  align-items: center;
+  background: rgba(51, 29, 28, 0.99);
+  border: 15px solid transparent;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 50rem;
+  justify-content: center;
+  position: relative;
+  width: 70rem;
+}
+
+.DivConteudo {
+  align-items: center;
+  align-self: center;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: 60em;
+}
+
+.DivConteudo > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.DivConteudo > *:last-child {
+  margin-bottom: 1rem;
+}
+
+.buttonContainer {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.body {
+  align-items: center;
+  background-image: url(../../Componentes/img/FundoLogin.png);
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.img {
+  border-bottom: 90px solid #9D7A44;
+  height: 5rem;
+}
+
+.infoContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perfil {
+  align-items: flex-start;
+  align-self: center;
+  background: #d5a85c;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  width: 60em;
+}
+
+/* Estilos para telas grandes */
+@media (min-width: 1200px) {
+  .Div {
+    width: 75rem;
+    height: 33rem;
+  }
+
+  .DivConteudo {
+    width: 60em;
+  }
+
+  .perfil {
+    width: 40rem;
+    height: 5rem;
+  }
+
+}
+
+/* Estilos para telas médias */
+@media (min-width: 1200px) {
+  .Div {
+    width: 75rem;
+    height: 32rem;
+  }
+
+  .DivConteudo {
+    width: 34em;
+  }
+
+  .perfil {
+    width: 33rem;
+    height: 6rem;
+  }
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 724px) {
+  .Div {
+    width: 36rem;
+    height: 32rem;
+  }
+
+  .DivConteudo {
+    width: 20em;
+  }
+
+  .perfil {
+    width: 33rem;
+    height: 6rem;
+  }
+}
+
+/* Estilos para telas bem pequenas */
+@media (max-width: 568px) {
+  .Div {
+    width: 18rem;
+    height: 39rem;
+  }
+
+  .DivConteudo {
+    width: 17em;
+  }
+
+  .perfil {
+    width: 16rem;
+  }
+}

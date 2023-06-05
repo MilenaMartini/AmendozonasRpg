@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../../../Componentes/img/FundoLogin.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Div {
+  width: 70rem;
+  height: 50rem;
+  background: rgba(51, 29, 28, 0.99);
+  border: 15px solid transparent;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  height: 5rem;
+  border-bottom: 90px solid transparent;
+}
+
+.DivConteudo {
+  width: 60em;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  align-self: center;
+}
+
+.InputsLinha {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.InputsLinha > * {
+  margin-right: 1rem;
+  width: 60rem;
+  font-size: 14px;
+}
+
+.InputsLinha > *:last-child {
+  margin-right: 0;
+}
+
+.InputEmail {
+  width: 100%;
+}
+
+.InputPequeno {
+  width: 40%;
+}
+
+.DivConteudo > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.DivConteudo > *:last-child {
+  margin-bottom: 1rem;
+}
+
+.BotoesLinha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estilos para telas médias */
+@media (max-width: 1350px) {
+  .Div {
+    width: 60rem;
+    height: 33rem;
+  }
+
+  .DivConteudo {
+    width: 50em;
+  }
+
+  .InputsLinha > * {
+    width: 25rem;
+  }
+
+  .InputPequeno {
+    width: 30%;
+  }
+
+  .img {
+    height: 5rem;
+    border-bottom: 30px solid transparent;
+  }
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  .Div {
+    width: 30rem;
+  }
+
+  .DivConteudo {
+    width: 20em;
+  }
+
+  .InputsLinha {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .InputsLinha > * {
+    width: 100%;
+  }
+
+  .InputPequeno {
+    width: 100%;
+  }
+}

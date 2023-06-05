@@ -1,0 +1,90 @@
+.card {
+  background-color: #D5A85C;
+  border: 1px solid #9D7A44;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  border-radius: 8px 8px 0 0;
+  height: 180px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.edit-button {
+  background-color: rgba(157, 17, 17, 0.673);
+  border: none;
+  border-radius: 30%;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  align-self: flex-end;
+  margin-top: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.edit-button:hover {
+  color: #141414d0;
+}
+
+.card h2,
+.card p {
+  color: #fff;
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Estilos para telas grandes */
+@media (min-width: 1200px) {
+  .card {
+    width: 200px;
+  }
+
+  .card img {
+    height: 120px;
+  }
+}
+
+/* Estilos para telas médias */
+@media (max-width: 1199px) {
+  .card {
+    width: 250px;
+    align-self: center;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  .card {
+    width: 200px;
+  }
+
+  .card img {
+    height: 120px;
+  }
+}
