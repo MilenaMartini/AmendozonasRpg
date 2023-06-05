@@ -27,21 +27,21 @@ function CadastroP1({cadasroP1}) {
 
   return (
     <div className={styles.Div}>
-      <img src={logo} className={styles.img} alt='Logo do site' />
-
       <div className={styles.DivConteudo}>
+        <img src={logo} className={styles.img} alt='Logo do site' />
+
         <div className={styles.InputsLinha}>
           <Input
             texto="Digite seu Nome"
             type="text"
-            className={styles.InputPequeno}
+            className={`${styles.InputPequeno} ${styles.InputEspacamento}`} // Adicionando classe para espaçamento
             value={nome}
             onChange={e => setNome(e.target.value)}
           />
           <Input
             texto="Digite seu Sobrenome"
             type="text"
-            className={styles.InputPequeno}
+            className={`${styles.InputPequeno} ${styles.InputEspacamento}`} // Adicionando classe para espaçamento
             value={sobrenome}
             onChange={e => setSobrenome(e.target.value)}
           />
@@ -55,20 +55,18 @@ function CadastroP1({cadasroP1}) {
           <Input
             texto="Digite sua Senha"
             type="password"
-            className={styles.InputPequeno}
+            className={`${styles.InputPequeno} ${styles.InputEspacamento}`} // Adicionando classe para espaçamento
             value={senha}
             onChange={e => setSenha(e.target.value)}
           />
           <Input
             texto="Confirme sua Senha"
             type="password"
-            className={styles.InputPequeno}
+            className={`${styles.InputPequeno} ${styles.InputEspacamento}`} // Adicionando classe para espaçamento
             value={confirmarSenha}
             onChange={e => setConfirmarSenha(e.target.value)}
           />
         </div>
-
-        
 
         <div className={styles.BotoesLinha}>
           <Link to="/" style={{ textDecoration: 'none', marginRight: '1rem' }}>

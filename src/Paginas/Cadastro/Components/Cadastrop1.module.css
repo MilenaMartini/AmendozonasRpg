@@ -80,7 +80,7 @@ body {
   gap: 1rem;
 }
 
-/* Estilos para telas médias */
+/* Estilos para telas normal */
 @media (max-width: 1350px) {
   .Div {
     width: 60rem;
@@ -91,8 +91,11 @@ body {
     width: 50em;
   }
 
+  
+
   .InputsLinha > * {
     width: 25rem;
+    border: 1px;
   }
 
   .InputPequeno {
@@ -100,19 +103,26 @@ body {
   }
 
   .img {
-    height: 5rem;
-    border-bottom: 30px solid transparent;
+    height: 4rem;
+    border-bottom: 5px solid transparent;
   }
 }
 
-/* Estilos para telas pequenas */
+/* Estilos para telas medias */
 @media (max-width: 768px) {
   .Div {
-    width: 30rem;
+    width: 35rem;
+    height: 32rem;
   }
 
+  .img {
+  height: 5rem;
+  border-bottom: 90px solid transparent;
+}
+
   .DivConteudo {
-    width: 20em;
+    width: 25rem;
+    height: 25rem;
   }
 
   .InputsLinha {
