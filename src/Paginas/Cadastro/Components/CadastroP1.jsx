@@ -69,7 +69,7 @@ function CadastroP1({cadasroP1}) {
         </div>
 
         <div className={styles.BotoesLinha}>
-          <Link to="/" style={{ textDecoration: 'none', marginRight: '1rem' }}>
+          <Link to="/" style={{ textDecoration: 'none', marginRight: '1rem', width: '27rem' }}>
             <Button texto='Voltar' />
           </Link>
           <Button texto='Próximo' onClick={sendData}/>

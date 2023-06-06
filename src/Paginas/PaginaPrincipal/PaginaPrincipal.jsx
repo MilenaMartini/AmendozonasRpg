@@ -1,5 +1,8 @@
 import styles from './PaginaPrincipal.module.css';
+import {Input} from '../../Componentes/Input/input'
 import { Button } from '../../Componentes/Button/Button';
+import searchIcon from '../../Componentes/img/Lupa.png';
+import Mais from '../../Componentes/img/Mais.png'
 import Card from '../../Componentes/Card/Card';
 
 function PaginaPrincipal() {
@@ -14,14 +17,54 @@ function PaginaPrincipal() {
           <Button texto='Voltar' />
         </div>
       </div>
-      <br /><br />
+      <br />
+
       <div className={styles.DivConteudo}>
-        <Card
-          imageSrc="caminho_para_imagem.jpg"
-          name="Nome do personagem"
-          description="Descrição do personagem"
-          editLink="pagina_de_edicao"
-        />
+        <div className={styles.barradePesquisa}>
+          <div className={styles.espaco}>
+            <input
+              type="text"
+              placeholder="Pesquisar..."
+              className={styles.inputPesquisa}
+            />
+
+          <button className={styles.searchButton}>
+            <img src={searchIcon} alt="Ícone de pesquisa" />
+          </button>
+          </div>
+        
+        </div>
+
+        <div className={styles.card}>
+
+          <div className={styles.cardMais}>
+            <button className={styles.buttonNovo}>
+              <img src={Mais} className={styles.imgmais} alt="Imagem do personagem" />
+            </button>
+          </div>
+
+          <Card
+            imageSrc="caminho_para_imagem.jpg"
+            name="Nome do personagem"
+            description="Descrição do personagem"
+            editLink="pagina_de_edicao"
+          />
+
+          <Card
+            imageSrc="caminho_para_imagem.jpg"
+            name="Nome do personagem"
+            description="Descrição do personagem"
+            editLink="pagina_de_edicao"
+          />
+
+          <Card
+            imageSrc="caminho_para_imagem.jpg"
+            name="Nome do personagem"
+            description="Descrição do personagem"
+            editLink="pagina_de_edicao"
+          />
+          </div>
+         
       </div>
     </div>
   );

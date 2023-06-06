@@ -3,52 +3,6 @@
   padding: 0;
 }
 
-.BotoesLinha {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.Div {
-  align-items: center;
-  background: rgba(51, 29, 28, 0.99);
-  border: 15px solid transparent;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  height: 50rem;
-  justify-content: center;
-  position: relative;
-  width: 70rem;
-}
-
-.DivConteudo {
-  align-items: center;
-  align-self: center;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  width: 60em;
-}
-
-.DivConteudo > *:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-
-.DivConteudo > *:last-child {
-  margin-bottom: 1rem;
-}
-
-.buttonContainer {
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .body {
   align-items: center;
   background-image: url(../../Componentes/img/FundoLogin.png);
@@ -58,9 +12,62 @@
   justify-content: center;
 }
 
-.img {
-  border-bottom: 90px solid #9D7A44;
+
+
+.Div {
+  align-items: center;
+  background: rgba(51, 29, 28, 0.99);
+  border: 15px solid transparent;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 33rem;
+  justify-content: center;
+  position: relative;
+  width: 73rem;
+}
+
+.perfil {
+  align-items: stretch;
+  align-self: center;
+  background: #d5a95cea;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  gap: 20px;
   height: 5rem;
+  justify-content: space-between;
+  padding: 1rem;
+  top: 0;
+  width: 20rem;
+}
+
+.buttonContainer {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.BotoesLinha {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.DivConteudo {
+  align-items: center;
+  align-self: center;
+  background: transparent;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 25rem;
+  justify-content: flex-start;
+  width: 70em;
+  background-color: rgba(0, 0, 0, 0.132);
 }
 
 .infoContainer {
@@ -70,85 +77,102 @@
   gap: 10px;
 }
 
-.perfil {
-  align-items: flex-start;
-  align-self: center;
-  background: #d5a85c;
-  border-radius: 10px;
-  color: white;
+.barradePesquisa{
+  background-color: #9a80527a;
+  height: 12%;
+  width: 100%;
   display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  padding: 1rem;
-  position: absolute;
-  top: 0;
-  width: 60em;
+  justify-content: end;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-/* Estilos para telas grandes */
-@media (min-width: 1200px) {
-  .Div {
-    width: 75rem;
-    height: 33rem;
-  }
+.inputPesquisa{
+  height: 1.9rem;
+  width: 20rem;
+  border-radius: 10px;
+  background-color: #d5a95cea;
+  border: 2px solid #9D7A44;
+  border-right: 0;
+  font-size: 10px;
+  padding-left: 10px;
+  padding-top: 1px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 0;
+}
 
-  .DivConteudo {
-    width: 60em;
-  }
+.inputPesquisa::placeholder{
+  color: white;
+  font-size: 20px;
+  padding-left: 10px;
+}
 
-  .perfil {
-    width: 40rem;
-    height: 5rem;
-  }
+.searchButton{
+  height: 2.2rem;
+  width: 2.6rem;
+  background-color: #a13431;
+  border: 2px solid #9D7A44;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 10px;
 
 }
 
-/* Estilos para telas médias */
-@media (min-width: 1200px) {
-  .Div {
-    width: 75rem;
-    height: 32rem;
-  }
-
-  .DivConteudo {
-    width: 34em;
-  }
-
-  .perfil {
-    width: 33rem;
-    height: 6rem;
-  }
+.espaco{
+  height: 2.2rem;
+  width: 24rem;
+  display: flex;
+  align-items: flex-end;
 }
 
-/* Estilos para telas pequenas */
-@media (max-width: 724px) {
-  .Div {
-    width: 36rem;
-    height: 32rem;
-  }
-
-  .DivConteudo {
-    width: 20em;
-  }
-
-  .perfil {
-    width: 33rem;
-    height: 6rem;
-  }
+.card{
+  display: flex;
+  align-items: flex-end;
+  background-color: #a1353125;
+  width: 95%;
+  height: 67%;
 }
 
-/* Estilos para telas bem pequenas */
-@media (max-width: 568px) {
-  .Div {
-    width: 18rem;
-    height: 39rem;
-  }
+.cardMais {
+  background-color: #ab301e;
+  border: 1px solid #9D7A44;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+  padding: 10px;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  width: 12.5rem;
+  height: 13.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  .DivConteudo {
-    width: 17em;
-  }
+.imgmais{
+  width: 8rem;
+  height: 8rem;
 
-  .perfil {
-    width: 16rem;
-  }
+}
+
+.buttonNovo{
+  background-color: transparent;
+  border-color: transparent;
+  width: 100%;
+  height: 100%;
+
+}
+
+.buttonNovo:hover {
+  background-color: #9b231128;
 }

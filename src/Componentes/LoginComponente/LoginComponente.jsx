@@ -48,7 +48,10 @@ function LoginComponente() {
           onChange={e => setSenha(e.target.value)}
           type='password'
         />
-        <Button texto='Entrar' onClick={handleLogin} />
+
+        <div className={styles.btn}>
+          <Button texto='Entrar' onClick={handleLogin} />
+        </div>
 
         <a href='/cadastro' className={`${styles.Link} ${styles.LinkMargin}`}>
           CRIAR CONTA
