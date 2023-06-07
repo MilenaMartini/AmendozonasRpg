@@ -57,7 +57,7 @@
 }
 
 .DivConteudo {
-  align-items: center;
+  align-items: flex-end;
   align-self: center;
   background: transparent;
   border-radius: 15px;
@@ -78,7 +78,7 @@
 }
 
 .barradePesquisa{
-  background-color: #9a80527a;
+  background-color: #613f2ce7;
   height: 12%;
   width: 100%;
   display: flex;
@@ -92,7 +92,9 @@
 
 .inputPesquisa{
   height: 1.9rem;
-  width: 20rem;
+  width: 18rem;
+  display: flex;
+  align-content: center;
   border-radius: 10px;
   background-color: #d5a95cea;
   border: 2px solid #9D7A44;
@@ -107,7 +109,7 @@
 }
 
 .inputPesquisa::placeholder{
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 20px;
   padding-left: 10px;
 }
@@ -133,13 +135,15 @@
   align-items: flex-end;
 }
 
-.card{
-  display: flex;
-  align-items: flex-end;
-  background-color: #a1353125;
-  width: 95%;
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Define 3 colunas com largura igual */
+  grid-gap: 10px; /* Define o espaçamento entre os itens da grid */
+  width: 98%;
   height: 67%;
+  overflow: auto;
 }
+
 
 .cardMais {
   background-color: #ab301e;
@@ -147,8 +151,6 @@
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  margin-right: 30px;
-  margin-left: 30px;
   padding: 10px;
   position: relative;
   transition: box-shadow 0.3s ease;
@@ -175,4 +177,14 @@
 
 .buttonNovo:hover {
   background-color: #9b231128;
+}
+
+/* barra de rolagem */
+/* Estilizando a barra de rolagem no Google Chrome e Safari */
+.card::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.card::-webkit-scrollbar-thumb {
+  background-color: #d5a95ce1;
 }

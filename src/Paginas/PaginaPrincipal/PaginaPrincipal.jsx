@@ -32,7 +32,7 @@ function PaginaPrincipal() {
             <img src={searchIcon} alt="Ícone de pesquisa" />
           </button>
           </div>
-        
+
         </div>
 
         <div className={styles.card}>
@@ -42,6 +42,13 @@ function PaginaPrincipal() {
               <img src={Mais} className={styles.imgmais} alt="Imagem do personagem" />
             </button>
           </div>
+
+          <Card
+            imageSrc="caminho_para_imagem.jpg"
+            name="Nome do personagem"
+            description="Descrição do personagem"
+            editLink="pagina_de_edicao"
+          />
 
           <Card
             imageSrc="caminho_para_imagem.jpg"
