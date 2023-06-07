@@ -12,6 +12,11 @@
   margin: 2% 0; /* Define o espaçamento vertical de 2% e o espaçamento horizontal como 0 */
 }
 
+.ButtonEnter:hover {
+  background-color: #931b16;
+}
+
+
 @media (min-width: 768px) {
   .ButtonEnter {
     width: 95%;

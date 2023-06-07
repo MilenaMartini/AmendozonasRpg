@@ -44,7 +44,8 @@
 }
 
 .edit-button:hover {
-  color: #141414d0;
+  color: #ffffffcc;
+  background-color: #933116;
 }
 
 .card h2,
