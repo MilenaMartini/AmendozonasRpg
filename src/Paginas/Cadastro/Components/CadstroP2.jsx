@@ -1,11 +1,20 @@
+// Importações do React
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+// Importação axios
+import axios from 'axios';
+
+// Importações CSS
 import styles from './CadastroP2.module.css';
+
+// Importações de imagens
 import logo from '../../../Componentes/img/Logo.png';
+
+// Importações de componentes
 import { Input } from '../../../Componentes/Input/input';
 import { InputEmail } from '../../../Componentes/Input/inputEmail';
 import { Button } from '../../../Componentes/Button/Button';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 const API_BASE = 'https://amendozonas.vercel.app';
 

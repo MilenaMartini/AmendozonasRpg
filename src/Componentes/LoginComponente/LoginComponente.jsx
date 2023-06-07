@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 function LoginComponente() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [token, setToken] = useState('');
   const [erro, setErro] = useState('');
   const navigate = useNavigate();
 
@@ -22,9 +21,13 @@ function LoginComponente() {
         password: senha
       })
       .then(response => {
-        const token = response.data.userAuth;
-        setToken(token);
-        navigate('/principal');
+        if (response.data.userAuth){
+          navigate('/principal', {
+            state: {
+              token: response.data.userAuth
+            }
+          });
+        }
       })
       .catch(error => {
         console.error('Erro na requisição:', error);

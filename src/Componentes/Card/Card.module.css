@@ -1,6 +1,6 @@
 .card {
   background-color: #D5A85C;
-  border: 1px solid #9D7A44;
+  border:1.5px solid #ce9d54;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -18,7 +18,8 @@
 }
 
 .card img {
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
+  border:1.5px solid #ce9d54;
   height: 180px;
   object-fit: cover;
   overflow: hidden;
@@ -44,11 +45,17 @@
 }
 
 .edit-button:hover {
-  color: #ffffffcc;
+  color: #ffffffcf;
   background-color: #933116;
 }
 
-.card h2,
+.card h2{
+  color: #fff;
+  font-size: 22px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
 .card p {
   color: #fff;
   font-size: 18px;
