@@ -72,9 +72,6 @@ function CadastroP2({ receivep2data, goback }) {
         <div className={styles.InputsLinha}>
           <InputEmail placeholder="Digite seu Endereço" value={endereco}  />
         </div>
-          {endereco && (
-            <p>Endereço: {endereco}</p>
-          )}
         <div className={styles.BotoesLinha}>
           <Button texto='Voltar' onClick={() => goback(true)} />
           <Button texto='Criar' onClick={cadastrarUsuario} />
