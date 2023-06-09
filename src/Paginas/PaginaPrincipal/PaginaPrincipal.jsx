@@ -1,7 +1,8 @@
 // Importações do React
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+
 
 // Importações axios
 import axios from 'axios';
@@ -9,6 +10,7 @@ import axios from 'axios';
 // Importações componentes
 import { Button } from '../../Componentes/Button/Button';
 import Card from '../../Componentes/Card/Card';
+
 
 // Importação CSS
 import styles from './PaginaPrincipal.module.css';
@@ -28,14 +30,6 @@ function PaginaPrincipal() {
 
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await axios.get(`${API_BASE}/users/find/${id}`);
-  //   };
-  
-  //   fetchData();
-  // }, [id]);
   
   async function fetchData() {
     const response = await axios.get(`${API_BASE}/users/find/${id}`,
@@ -46,22 +40,37 @@ function PaginaPrincipal() {
     })
     console.log(response)
     setName(response.data.name)
+    setLastname(response.data.last_name)
   }
 
   useEffect (() => {
     fetchData()
   }, [id])
 
+  
+const navigate = useNavigate();
+
+const handleVoltar = () => {
+  navigate(-1); // volta
+};
+
+const handleAmigo = () => {
+  navigate('/Amigos'); // volta
+};
+
 
   return (
     <div className={styles.Div}>
       <div className={styles.perfil}>
       <div className={styles.infoContainer}>
-          <h2>{`Nome: ${name}`}</h2>
+      <h3>Nome:
+          {name}
+          {lastname}
+      </h3>
         </div>
         <div className={styles.buttonContainer}>
-          <Button texto='Editar' />
-          <Button texto='Voltar' />
+          <Button texto='Amigos' onClick={handleAmigo}/>
+          <Button texto='Voltar' onClick={handleVoltar}/>
         </div>
       </div>
       <br />

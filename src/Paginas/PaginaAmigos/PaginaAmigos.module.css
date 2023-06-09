@@ -60,7 +60,7 @@
   gap: 20px;
   height: 25rem;
   justify-content: flex-start;
-  width: 70em;
+  width: 60rem;
   background-color: rgba(0, 0, 0, 0.132);
 }
 
@@ -117,12 +117,18 @@
   border: 2px solid #9D7A44;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-top-left-radius: 0;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 10px;
 
 }
+
+.mais{
+  height: 1.8rem;
+}
+
 
 .searchButton:hover {
   background-color: #931b16;
