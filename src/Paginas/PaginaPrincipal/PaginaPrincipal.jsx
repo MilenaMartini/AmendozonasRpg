@@ -1,4 +1,3 @@
-// Importações do React
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate} from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
@@ -9,7 +8,7 @@ import axios from 'axios';
 
 // Importações componentes
 import { Button } from '../../Componentes/Button/Button';
-import Card from '../../Componentes/Card/Card';
+import {DivCards} from '../../Componentes/DivCards/DivCards';
 
 
 // Importação CSS
@@ -17,7 +16,6 @@ import styles from './PaginaPrincipal.module.css';
 
 // Importações de imagens
 import searchIcon from '../../Componentes/img/Lupa.png';
-import Mais from '../../Componentes/img/Mais.png';
 
 const API_BASE = 'https://amendozonas.vercel.app';
 
@@ -26,7 +24,7 @@ function PaginaPrincipal() {
 
   const { id } = jwtDecode(location.state.token)
 
-  console.log(id)
+  // console.log(id)
 
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
@@ -91,43 +89,7 @@ const handleAmigo = () => {
 
         </div>
 
-        <div className={styles.card}>
-
-          <div className={styles.cardMais}>
-            <button className={styles.buttonNovo}>
-              <img src={Mais} className={styles.imgmais} alt="Imagem do personagem" />
-            </button>
-          </div>
-
-          <Card
-            imageSrc="caminho_para_imagem.jpg"
-            name="Nome do personagem"
-            description="Descrição do personagem"
-            editLink="pagina_de_edicao"
-          />
-
-          <Card
-            imageSrc="caminho_para_imagem.jpg"
-            name="Nome do personagem"
-            description="Descrição do personagem"
-            editLink="pagina_de_edicao"
-          />
-
-          <Card
-            imageSrc="caminho_para_imagem.jpg"
-            name="Nome do personagem"
-            description="Descrição do personagem"
-            editLink="pagina_de_edicao"
-          />
-
-          <Card
-            imageSrc="caminho_para_imagem.jpg"
-            name="Nome do personagem"
-            description="Descrição do personagem"
-            editLink="pagina_de_edicao"
-          />
-          </div>
-         
+        <DivCards/>
       </div>
     </div>
   );

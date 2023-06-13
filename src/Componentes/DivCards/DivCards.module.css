@@ -1,0 +1,60 @@
+
+  .card {
+    display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr); colunas 
+    grid-gap: 10px; espaçamento */
+    width: 98%;
+    height: 67%;
+    overflow: auto;
+    flex-wrap: wrap;
+  }
+  
+  
+  .cardMais {
+    background-color: #ab301e;
+    border: 1px solid #9D7A44;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+    width: 12.5rem;
+    height: 13.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .imgmais{
+    width: 8rem;
+    height: 8rem;
+  
+  }
+  
+  .buttonNovo{
+    background-color: transparent;
+    border-color: transparent;
+    width: 100%;
+    height: 100%;
+  
+  }
+  
+  .buttonNovo:hover {
+    background-color: #9b231128;
+  }
+  
+  /* barra de rolagem */
+  .card::-webkit-scrollbar {
+    width: 12px;
+  
+  }
+  
+  .card::-webkit-scrollbar-thumb {
+    background-color: #d5a95ce1;
+  }
+  
+  .card::-webkit-scrollbar-thumb:hover {
+    background-color: #d5a95ccd;
+  }

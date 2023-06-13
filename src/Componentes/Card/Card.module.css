@@ -1,3 +1,11 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background: red;
+  margin-left: 1rem;
+}
+
+
 .card {
   background-color: #D5A85C;
   border:1.5px solid #ce9d54;
