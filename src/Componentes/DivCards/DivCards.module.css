@@ -1,13 +1,19 @@
 
   .card {
     display: flex;
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr); colunas 
-    grid-gap: 10px; espaçamento */
+    flex-direction: row;
+    flex-wrap: wrap;
+  
+    
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 10px;
     width: 98%;
     height: 67%;
-    overflow: auto;
     flex-wrap: wrap;
+    overflow: auto;
+
   }
   
   
@@ -45,9 +51,10 @@
     background-color: #9b231128;
   }
   
-  /* barra de rolagem */
-  .card::-webkit-scrollbar {
+   /* barra de rolagem */
+   .card::-webkit-scrollbar {
     width: 12px;
+    height: 12px;
   
   }
   

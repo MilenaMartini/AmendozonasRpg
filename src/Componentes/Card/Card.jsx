@@ -1,25 +1,42 @@
-import { FaPencilAlt } from 'react-icons/fa';
-
+import { useState, useEffect } from 'react';
+import { FiInfo } from 'react-icons/fi';
 import styles from './Card.module.css';
-import Player from '../../Componentes/img/tstcard.png';
 
+const Card = ({ filename, nickname, description }) => {
+  const [image, setImage] = useState('');
 
+  useEffect(() => {
+    async function fetchImage() {
+      try {
+        const response = await fetch(filename);
+        const blob = await response.blob();
+        const imageURL = URL.createObjectURL(blob);
+        setImage(imageURL);
+      } catch (error) {
+        console.error('Erro ao obter a imagem do jogador:', error);
+      }
+    }
 
-const Card = () => {
-  
+    fetchImage();
+  }, [filename]);
+
+  const handleEdit = () => {
+    // edição do card
+    console.log('Editar card:', nickname);
+  };
+
   return (
     <div className={styles.cardContainer}>
-      {/* botao de mais */}
-      
-        <div  className={styles.card}>
-          <img src={Player} alt="Imagem do personagem" />
-          <h2>Name: </h2>
-          <p>Descrição: </p>
-          <button className={styles['edit-button']} >
-            <FaPencilAlt size={20} />
-          </button>
+      <div className={styles.card}>
+        <img src={image} alt="Imagem do personagem" />
+        <div className={styles.description}>
+          <h2>Nome: {nickname}</h2>
+          <p>Descrição: {description}</p>
         </div>
-      
+        <button className={styles['edit-button']} onClick={handleEdit}>
+          <FiInfo  size={20} />
+        </button>
+      </div>
     </div>
   );
 };

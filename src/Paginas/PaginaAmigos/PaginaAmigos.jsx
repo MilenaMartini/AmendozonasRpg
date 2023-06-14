@@ -1,36 +1,56 @@
-// // Importações do React
-// import { useEffect, useState } from 'react';
-// import { useLocation } from 'react-router-dom';
-// import jwtDecode from 'jwt-decode';
-// import { useNavigate } from 'react-router-dom';
-
-// // Importações axios
-// import axios from 'axios';
-
-// Importações componentes
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
+import axios from 'axios';
 import { Button } from '../../Componentes/Button/Button';
-import CardAmigos from '../../Componentes/CardAmigos/CardAmigos'
-
-
-// Importação CSS
+import { DivCards } from '../../Componentes/DivCards/DivCards';
 import styles from './PaginaAmigos.module.css';
+import searchIcon from '../../Componentes/img/Lupa.png';
 
-// Importações de imagens
-import adicionar from '../../Componentes/img/Mais.png';
+const API_BASE = 'https://amendozonas.vercel.app';
 
 function PaginaAmigos() {
+  const location = useLocation();
+  const { id } = jwtDecode(location.state.token);
+  const [name, setName] = useState('');
+  const [lastname, setLastname] = useState('');
+
+  async function fetchData() {
+    const response = await axios.get(`${API_BASE}/users/listfriends`, {
+      headers: {
+        Authorization: `Bearer ${location.state.token}`
+      }
+    });
+    console.log(response);
+    setName(response.data.name);
+    setLastname(response.data.last_name);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [id]);
+
+  const navigate = useNavigate();
+
+  const handleVoltar = () => {
+    navigate('/principal');
+  };
+
+  const handleAmigo = () => {
+    navigate('/Amigos');
+  };
 
   return (
     <div className={styles.Div}>
       <div className={styles.perfil}>
-      <div className={styles.infoContainer}>
-      <h3>Nome:
-
-      </h3>
+        <div className={styles.infoContainer}>
+          <h3>
+            Nome: {name} {lastname}
+          </h3>
         </div>
         <div className={styles.buttonContainer}>
-          <Button texto='Amigos' />
-          <Button texto='Voltar'/>
+          <Button texto="Amigos" onClick={handleAmigo} />
+          <Button texto="Voltar" onClick={handleVoltar} />
         </div>
       </div>
       <br />
@@ -40,22 +60,17 @@ function PaginaAmigos() {
           <div className={styles.espaco}>
             <input
               type="text"
-              placeholder="Adicionar Amigo"
+              placeholder="Pesquisar..."
               className={styles.inputPesquisa}
             />
 
-          <button className={styles.searchButton}>
-            <img className={styles.mais} src={adicionar} alt="Ícone de pesquisa" />
-          </button>
+            <button className={styles.searchButton}>
+              <img src={searchIcon} alt="Ícone de pesquisa" />
+            </button>
           </div>
         </div>
 
-        <div className={styles.card}>
-            <CardAmigos>
-              
-            </CardAmigos>
-          </div>
-         
+        <DivCards />
       </div>
     </div>
   );

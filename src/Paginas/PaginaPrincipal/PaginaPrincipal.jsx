@@ -28,7 +28,7 @@ function PaginaPrincipal() {
 
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
-  
+
   async function fetchData() {
     const response = await axios.get(`${API_BASE}/users/find/${id}`,
     {
@@ -71,7 +71,7 @@ const handleAmigo = () => {
           <Button texto='Voltar' onClick={handleVoltar}/>
         </div>
       </div>
-      <br />
+      <br/>
 
       <div className={styles.DivConteudo}>
         <div className={styles.barradePesquisa}>
@@ -86,7 +86,6 @@ const handleAmigo = () => {
             <img src={searchIcon} alt="Ícone de pesquisa" />
           </button>
           </div>
-
         </div>
 
         <DivCards/>
