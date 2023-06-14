@@ -48,7 +48,6 @@ function PaginaAmigos() {
             <img className={styles.mais} src={adicionar} alt="Ícone de pesquisa" />
           </button>
           </div>
-
         </div>
 
         <div className={styles.card}>
