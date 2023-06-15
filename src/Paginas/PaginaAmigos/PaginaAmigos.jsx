@@ -36,9 +36,9 @@ function PaginaAmigos() {
     navigate('/principal');
   };
 
-  const handleAmigo = () => {
-    navigate('/Amigos');
-  };
+  // const handleAmigo = () => {
+  // //   navigate('');
+  // };
 
   return (
     <div className={styles.Div}>
@@ -49,7 +49,7 @@ function PaginaAmigos() {
           </h3>
         </div>
         <div className={styles.buttonContainer}>
-          <Button texto="Amigos" onClick={handleAmigo} />
+          <Button texto="Editar" />
           <Button texto="Voltar" onClick={handleVoltar} />
         </div>
       </div>
