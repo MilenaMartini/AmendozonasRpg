@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 import Card from '../Card/Card';
@@ -9,14 +8,15 @@ import Mais from '../../Componentes/img/Mais.png';
 const API_BASE = 'https://amendozonas.vercel.app';
 
 export function DivCards() {
-  const location = useLocation();
   const [players, setPlayers] = useState([]);
 
   const fetchData = useCallback(async () => {
     try {
+      const token = localStorage.getItem('token')
+
       const response = await axios.get(`${API_BASE}/players/userplayers`, {
         headers: {
-          Authorization: `Bearer ${location.state.token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -26,7 +26,7 @@ export function DivCards() {
     } catch (error) {
       console.error('Erro ao obter os dados dos jogadores:', error);
     }
-  }, [location.state.token]);
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -44,7 +44,7 @@ export function DivCards() {
         return (
           <Card
             key={player._id}
-            filename={player.filename}
+            location={player.location}
             nickname={player.nickname}
             description={player.description}
             editLink={player.editLink}

@@ -2,23 +2,26 @@ import { useState, useEffect } from 'react';
 import { FiInfo } from 'react-icons/fi';
 import styles from './Card.module.css';
 
-const Card = ({ filename, nickname, description }) => {
-  const [image, setImage] = useState('');
+const Card = ({ nickname, description, location }) => {
+  const [image, setImage] = useState(location);
+  const [data, setData] = useState('');
 
-  useEffect(() => {
-    async function fetchImage() {
-      try {
-        const response = await fetch(filename);
-        const blob = await response.blob();
-        const imageURL = URL.createObjectURL(blob);
-        setImage(imageURL);
-      } catch (error) {
-        console.error('Erro ao obter a imagem do jogador:', error);
-      }
-    }
 
-    fetchImage();
-  }, [filename]);
+  // useEffect(() => {
+  //   async function fetchImage() {
+  //     try {
+  //       const response = await fetch(location);
+  //       const blob = await response.blob();
+  //       const imageURL = URL.createObjectURL(blob);
+  //       setData (response.data?.user[0]);
+  //       setImage(imageURL);
+  //     } catch (error) {
+  //       console.error('Erro ao obter a imagem do jogador:', error);
+  //     }
+  //   }
+
+  //   fetchImage();
+  // }, [data]);
 
   const handleEdit = () => {
     // edição do card

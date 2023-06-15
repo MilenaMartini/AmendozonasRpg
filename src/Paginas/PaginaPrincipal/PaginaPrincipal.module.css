@@ -20,7 +20,7 @@
   width: 73rem;
 }
 
-.perfil {
+.profile {
   align-items: stretch;
   align-self: center;
   background: #d5a95cea;
@@ -43,14 +43,14 @@
   gap: 10px;
 }
 
-.BotoesLinha {
+.buttonRow {
   align-items: center;
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
 
-.DivConteudo {
+.contentDiv {
   align-items: flex-end;
   align-self: center;
   background: transparent;
@@ -72,13 +72,12 @@
   gap: 10px;
 }
 
-
-.barradePesquisa{
+.searchBar {
   background-color: #613f2ce7;
   height: 12%;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -86,7 +85,7 @@
   border-bottom-right-radius: 0;
 }
 
-.inputPesquisa{
+.searchInput {
   height: 1.9rem;
   width: 18rem;
   display: flex;
@@ -94,8 +93,9 @@
   border-radius: 10px;
   background-color: #d5a95cea;
   border: 2px solid #9D7A44;
+  color: white;
   border-right: 0;
-  font-size: 10px;
+  font-size: 15px;
   padding-left: 10px;
   padding-top: 1px;
   border-top-left-radius: 10px;
@@ -104,13 +104,13 @@
   border-bottom-right-radius: 0;
 }
 
-.inputPesquisa::placeholder{
+.searchInput::placeholder {
   color: rgb(255, 255, 255);
   font-size: 20px;
   padding-left: 10px;
 }
 
-.searchButton{
+.searchButton {
   height: 2.2rem;
   width: 2.6rem;
   background-color: #a13431;
@@ -121,18 +121,15 @@
   border-top-right-radius: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 10px;
-
 }
 
 .searchButton:hover {
   background-color: #931b16;
 }
 
-.espaco{
+.space {
   height: 2.2rem;
   width: 24rem;
   display: flex;
   align-items: flex-end;
 }
-
- 

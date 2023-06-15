@@ -1,12 +1,10 @@
 .cardContainer {
-  /* flex-wrap: wrap; */
-  /* background: red; */
-  /* margin-left: 1rem; */
+  display: flex;
 }
 
 
 .card {
-  background-color: #D5A85C;
+  background-color: #ce9d54;
   border:1.5px solid #ce9d54;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -27,13 +25,14 @@
 
 .card img {
   border-radius: 8px;
-  border:1.5px solid #ce9d54;
+  border: 1.5px solid #dda95b;
   height: 180px;
   object-fit: cover;
-  overflow: hidden;
+  object-position: top center;
   width: 100%;
   margin-bottom: 10px;
 }
+
 
 .edit-button {
   background-color: rgba(157, 17, 17, 0.673);
@@ -44,6 +43,8 @@
   height: 40px;
   width: 40px;
   position: relative;
+  bottom: -25%;
+  right: -3%;
   align-self: flex-end;
   margin-top: -40px;
   display: flex;
@@ -54,18 +55,18 @@
 
 .edit-button:hover {
   color: #ffffffcf;
-  background-color: #933116;
+  background-color: #931b16;
 }
 
 .card h2{
   color: #f8f1f1;
   font-size: 22px;
-  margin: 1px 0;
+  margin: 1px 0 0 0;
 }
 
 .card p {
   color: #f8f1f1;
-  font-size: 18px;
+  font-size: 17px;
   margin: 10px 0;
   font-weight: bold;
 }
@@ -73,8 +74,8 @@
 .description{
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  height: 2.5rem;
+  width: 95%;
+  height: 2.1rem;
 }
 
 /* Estilos para telas grandes */

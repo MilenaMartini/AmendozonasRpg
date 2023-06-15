@@ -11,19 +11,20 @@ const API_BASE = 'https://amendozonas.vercel.app';
 
 function PaginaAmigos() {
   const location = useLocation();
-  const { id } = jwtDecode(location.state.token);
+  const token = localStorage.getItem('token');
+  const { id } = jwtDecode(token);
   const [name, setName] = useState('');
-  const [lastname, setLastname] = useState('');
+  const [lastName, setLastName] = useState('');
 
   async function fetchData() {
     const response = await axios.get(`${API_BASE}/users/listfriends`, {
       headers: {
-        Authorization: `Bearer ${location.state.token}`
+        Authorization: `Bearer ${token}`
       }
     });
     console.log(response);
     setName(response.data.name);
-    setLastname(response.data.last_name);
+    setLastName(response.data.last_name);
   }
 
   useEffect(() => {
@@ -32,40 +33,36 @@ function PaginaAmigos() {
 
   const navigate = useNavigate();
 
-  const handleVoltar = () => {
+  const handleBack = () => {
     navigate('/principal');
   };
 
-  // const handleAmigo = () => {
-  // //   navigate('');
-  // };
-
   return (
-    <div className={styles.Div}>
-      <div className={styles.perfil}>
+    <div className={styles.container}>
+      <div className={styles.profile}>
         <div className={styles.infoContainer}>
           <h3>
-            Nome: {name} {lastname}
+            Name: {name} {lastName}
           </h3>
         </div>
         <div className={styles.buttonContainer}>
-          <Button texto="Editar" />
-          <Button texto="Voltar" onClick={handleVoltar} />
+          <Button text="Edit" />
+          <Button text="Back" onClick={handleBack} />
         </div>
       </div>
       <br />
 
-      <div className={styles.DivConteudo}>
-        <div className={styles.barradePesquisa}>
-          <div className={styles.espaco}>
+      <div className={styles.contentContainer}>
+        <div className={styles.searchBar}>
+          <div className={styles.space}>
             <input
               type="text"
-              placeholder="Pesquisar..."
-              className={styles.inputPesquisa}
+              placeholder="Search..."
+              className={styles.searchInput}
             />
 
             <button className={styles.searchButton}>
-              <img src={searchIcon} alt="Ícone de pesquisa" />
+              <img src={searchIcon} alt="Search Icon" />
             </button>
           </div>
         </div>

@@ -10,7 +10,7 @@ export const Router = () => {
       <Route exact path="/" Component={Login} />
       <Route path="/cadastro" Component={Cadastro} />
       <Route path="/principal" Component={PaginaPrincipal} />
-      <Route path="/Amigos" Component={PaginaAmigos} />
+      <Route path="/amigos" Component={PaginaAmigos} />
     </Routes>
   );
 };

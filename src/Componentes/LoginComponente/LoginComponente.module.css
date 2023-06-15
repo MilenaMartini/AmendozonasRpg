@@ -12,7 +12,7 @@ body {
   height: 100vh;
 }
 
-.Div {
+.container {
   width: 35rem;
   height: 30rem;
   background: rgba(51, 29, 28, 0.99);
@@ -23,7 +23,7 @@ body {
   align-items: center;
 }
 
-.DivConteudo {
+.content {
   height: 32rem;
   width: 27rem;
   background: transparent;
@@ -33,20 +33,20 @@ body {
   align-items: center;
 }
 
-.DivConteudo > *:not(:last-child) {
+.content > *:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
-.DivConteudo > *:last-child {
+.content > *:last-child {
   margin-bottom: 1rem;
 }
 
-.img {
+.logo {
   height: 5rem;
   border: none;
 }
 
-.Link {
+.link {
   font-size: 12px;
   color: white;
   margin-top: -10px;
@@ -54,11 +54,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.btn{
+.btn {
   width: 15rem;
 }
 
-.ErrorMessage{
+.errorMessage {
   color: rgb(255, 34, 0);
   font-weight: bold;
 }
@@ -76,14 +76,13 @@ body {
   }
 }
 
-
 @media screen and (max-width: 600px) {
-  .Div {
+  .container {
     width: 90%;
     height: auto;
   }
 
-  .DivConteudo {
+  .content {
     height: auto;
     width: 100%;
   }

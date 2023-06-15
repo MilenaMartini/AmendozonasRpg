@@ -1,44 +1,42 @@
-import styles from './LoginComponente.module.css';
-import logo from '../img/Logo.png';
-import { Input } from '../Input/input';
-import { Button } from '../Button/Button';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import styles from './LoginComponente.module.css';
+import logo from '../img/Logo.png';
+import { Input } from '../Input/Input';
+import { Button } from '../Button/Button';
 
-function LoginComponente() {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [erro, setErro] = useState('');
+const LoginComponent = () => {
+  const [email, setEmail] = useState('testando@gmail.com');
+  const [password, setPassword] = useState('123456');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  function handleLogin() {
+  const handleLogin = () => {
     const loginEndpoint = 'https://amendozonas.vercel.app/users/login';
 
     axios
       .post(loginEndpoint, {
         email: email,
-        password: senha
+        password: password
       })
       .then(response => {
-        if (response.data.userAuth){
-          navigate('/principal', {
-            state: {
-              token: response.data.userAuth
-            }
-          });
+        if (response.data.userAuth) {
+          const token = response.data.userAuth;
+          localStorage.setItem('token', token);
+          navigate('/principal');
         }
       })
       .catch(error => {
         console.error('Erro na requisição:', error);
-        setErro('Ocorreu um erro ao fazer login. Verifique seus dados.');
+        setError('Ocorreu um erro ao fazer login. Verifique seus dados.');
       });
-  }
+  };
 
   return (
-    <div className={styles.Div}>
-      <div className={styles.DivConteudo}>
-        <img src={logo} className={styles.img} alt='Logo do site' />
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <img src={logo} className={styles.logo} alt='Logo do site' />
         <Input
           texto='Digite seu Email'
           value={email}
@@ -47,8 +45,8 @@ function LoginComponente() {
         />
         <Input
           texto='Digite sua Senha'
-          value={senha}
-          onChange={e => setSenha(e.target.value)}
+          value={password}
+          onChange={e => setPassword(e.target.value)}
           type='password'
         />
 
@@ -56,13 +54,13 @@ function LoginComponente() {
           <Button texto='Entrar' onClick={handleLogin} />
         </div>
 
-        <a href='/cadastro' className={`${styles.Link} ${styles.LinkMargin}`}>
+        <a href='/cadastro' className={`${styles.link} ${styles.linkMargin}`}>
           CRIAR CONTA
         </a>
-        {erro && <p className={`${styles.ErrorMessage} ${styles.fadeIn}`}>{erro}</p>}
+        {error && <p className={`${styles.errorMessage} ${styles.fadeIn}`}>{error}</p>}
       </div>
     </div>
   );
-}
+};
 
-export default LoginComponente;
+export default LoginComponent;
